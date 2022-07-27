@@ -6,6 +6,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   res.send('auth');
 });
+
 /**
  * Endpoint = /auth/register
  * POST
@@ -18,6 +19,7 @@ router.get('/', function(req, res, next) {
  * - user id
  * - sensor uuid
  */
+
 router.post('/register', function(req, res, next) {
   var user_id = req.body.user_id;
   var installation_id = req.body.installation_id;
@@ -27,7 +29,25 @@ router.post('/register', function(req, res, next) {
 
   //TODO Store these three in DB
   
-  res.send('{user_id:' + user_id + '\, sensor_id: ' + uuidv4 + '}');
+  res.send('{"user_id":' + user_id + '\, "sensor_id": ' + uuidv4 + '}');
 });
 
+/**
+ * Endpoint = /auth/verify
+ * POST
+ * Parameters:
+ * - user_id: user id
+ * - sensor_id - sensor id
+ * Returns:
+ * - is_verified
+ */
+router.post('/verify', function(req, res, next) {
+  var user_id = req.body.user_id;
+  let sensor_id = req.body.sensor_id;
+
+  //TODO Verify match from DB
+  let verified = true;
+
+  res.send('{"is_verified":' + verified + '}');
+});
 module.exports = router;
