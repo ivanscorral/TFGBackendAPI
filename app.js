@@ -1,14 +1,21 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var morgan = require('morgan');
+/// IMPORTS ///
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var authRouter = require('./routes/auth');
-var actionsRouter = require('./routes/actions');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let morgan = require('morgan');
 
-var app = express();
+/// ROUTE IMPORTS ///
+
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/users');
+let authRouter = require('./routes/auth');
+let actionsRouter = require('./routes/actions');
+
+let app = express();
+
+
+/// MIDDLEWARE ///
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -17,6 +24,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+/// ROUTES ///
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
