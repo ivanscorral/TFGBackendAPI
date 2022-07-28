@@ -33,8 +33,4 @@ app.use('/auth', authRouter);
 app.use('/action', actionsRouter);
 
 
-
-
-
-
 module.exports = app;

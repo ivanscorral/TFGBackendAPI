@@ -33,7 +33,7 @@ router.get('/reading/get/:installation_id', function(req, res, next) {
  */
 
  router.get('/reading/get/mock', function(req, res, next) {
-  res.send('{"installation_id" : + '+ uuid.v4() + ', sensors : [{"sensor_id" : "1", "temp" : "22","posX" : "23", "posY" : "243"}, {"sensor_id" : "2", "temp" : "21","posX" : "234", "posY" : "311"}]}');
+  res.send('{"installation_id" : + '+ uuid.v4() + ', sensors : [{"sensor_id" : "1", "temp" : "22","posX" : "23", "posY" : "243"}, {"sensor_id" : "2", "temp" : "21","posX" : "234", "posY" : "311"}, {"sensor_id" : "3", "temp" : "24","posX" : "34", "posY" : "11"}, {"sensor_id" : "4", "temp" : "24","posX" : "534", "posY" : "111"}]}');
 });
 /**
  * Endpoint = /installation/get/mock
