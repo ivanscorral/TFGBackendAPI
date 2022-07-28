@@ -29,7 +29,7 @@ router.post('/register', function(req, res, next) {
 
   //TODO Store these three in DB
   
-  res.send('{"user_id":' + user_id + '\, "sensor_id": ' + uuidv4 + '}');
+  res.send('{"user_id":"' + user_id + '", "sensor_id": "' + uuidv4 + '"}');
 });
 
 /**
