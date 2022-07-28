@@ -16,6 +16,7 @@ let app = express();
 
 
 /// MIDDLEWARE ///
+//TODO Improve middleware
 
 app.use(morgan('dev'));
 app.use(express.json());
@@ -31,8 +32,7 @@ app.use('/users', usersRouter);
 app.use('/auth', authRouter);
 app.use('/action', actionsRouter);
 
-//TODO Improve middleware
-/* Middleware */
+
 
 
 
